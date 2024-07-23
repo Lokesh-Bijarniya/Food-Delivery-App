@@ -4,7 +4,7 @@ import googleLogo from '../assets/google.svg';
 import { useNavigate } from'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Login({handleName}) {
   const [userData, setUserData] = useState({ emailOrMobileNumber: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -35,6 +35,9 @@ export default function Login() {
        
       if(response.status === 200){
         alert("Login successful");
+        console.log(response.data.user.name);
+        handleName(response.data.user.name);
+        // localStorage.setItem('token', response.data.token);
         setTimeout(() => navigate('/') ,3000)
       }
     } catch (err) {
@@ -45,9 +48,9 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-100">
+    <div className="flex items-center justify-center bg-gray-100 p-16">
       <form className="bg-white border border-slate-300 rounded-lg shadow-sm flex flex-col w-full max-w-md p-8" onSubmit={handleSubmit}>
-        <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">Sign-In</h2>
 
         <input
           type="text"
@@ -75,7 +78,7 @@ export default function Login() {
           type="submit"
           className="bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition duration-300 cursor-pointer mb-4"
         >
-          Login
+          Signin
         </button>
 
         {error && <div className="text-red-500 text-center mb-4">{error}</div>}

@@ -47,7 +47,7 @@ export default function Signup() {
   };
 
   return (  
-    <div className="h-screen flex items-center justify-center bg-gray-100">  
+    <div className="flex items-center justify-center bg-gray-100 p-12">  
       <form className="bg-white border border-slate-300 rounded-lg shadow-sm flex flex-col w-full max-w-md p-8" onSubmit={handleSubmit}>  
         <h2 className="text-2xl font-semibold text-center mb-6">Create an Account</h2>  
         
@@ -106,7 +106,7 @@ export default function Signup() {
           <span>Signup with Google</span>  
         </button>  
         <div className='pt-4 text-center'>
-          <span className="text-gray-500">Already have an account? <Link to="/login" className='text-blue-700'>Login</Link></span>
+          <span className="text-gray-500">Already have an account? <Link to="/login" className='text-blue-700'>Signin</Link></span>
         </div>
       </form>  
     </div>  

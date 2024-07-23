@@ -1,15 +1,9 @@
-
-import Navbar from "../Components/Navbar"
+import HeroSection from "../Components/HeroSection";
 
 export default function Home() {
-  
-
   return (
-    <div className="">
-          <Header/>
-          <Navbar/>
-          <HeroSection/>
-          <Category/>
+    <div>
+      <HeroSection />
     </div>
-  )
+  );
 }
