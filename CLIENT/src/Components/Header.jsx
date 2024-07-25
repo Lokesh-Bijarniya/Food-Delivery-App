@@ -7,6 +7,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Link } from "react-router-dom";
 
 export default function Header({ name }) {
   const [isSignIn, setIsSignIn] = useState(false);
@@ -35,7 +36,7 @@ export default function Header({ name }) {
   };
 
   return (
-    <div className="bg-gray-300 h-12 flex items-center">
+    <div className="bg-gray-300  h-12 flex items-center">
       <div className="mx-24 flex justify-between w-full">
         <div className="flex items-center">
           <FacebookOutlinedIcon className="ml-4" />
@@ -50,6 +51,7 @@ export default function Header({ name }) {
             className="outline-none rounded-lg px-2 placeholder:text-lg "
           />
         </div>
+
 
         {isSignIn ? (
           <div className="flex items-center bg-gray-600 rounded-xl">

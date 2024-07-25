@@ -5,8 +5,10 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import HomeIcon from '@mui/icons-material/Home';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { useState } from "react";
+import AddHomeIcon from '@mui/icons-material/AddHome';
+import Header from "./Header";
 
-export default function Navbar() {
+export default function Navbar({name}) {
   const [active, setActive] = useState("");
 
   const handleClick = (e)=>{
@@ -16,6 +18,7 @@ export default function Navbar() {
 
   return (
     <div className="">
+      <Header name={name}/>
         <div>
             <h1 className="text-4xl text-center font-serif p-6 italic">BiteBase</h1>
         </div>
@@ -42,6 +45,10 @@ export default function Navbar() {
             <ShoppingCartCheckoutIcon className="text-gray-800"/>
               Cart
             </Link>
+            
+              <Link to='partner' className={`text-lg flex items-center ${active? "font-bold" : ""}`}>
+              <AddHomeIcon/> 
+               Add Restaurant</Link>
             
           </div>
         </nav>
